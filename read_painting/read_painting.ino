@@ -3,6 +3,7 @@
 
 const int threshold = 20;
 int noteC, noteD, noteE, noteF, noteG, noteA, noteB;
+char buf1[64], buf2[64], buf3[64], buf4[64], buf5[64], buf6[64], buf7[64];
 
 void setup()
 {
@@ -12,7 +13,41 @@ void setup()
 }
 
 void loop()
-{
-  Serial.println(touchRead(T0));  // get value using T0
-  delay(1000);
+{ 
+  noteC = touchRead(04);
+  sprintf (buf1, "Note C: %3d \r \n", noteC);
+  Serial.print (buf1);
+  delay (500);
+
+// bruh
+  noteD = touchRead(00);
+  sprintf (buf2, "Note D: %3d \r \n", noteD);
+  Serial.print (buf2);
+  delay (500);
+
+//why
+  noteE = touchRead(02);
+  sprintf (buf3, "Note E: %3d \r \n", noteE);
+  Serial.print (buf3);
+  delay (500);
+
+  noteF = touchRead(15);
+  sprintf (buf4, "Note F: %3d \r \n", noteF);
+  Serial.print (buf4);
+  delay (500);
+
+  noteG = touchRead(13);
+  sprintf (buf5, "Note G: %3d \r \n", noteG);
+  Serial.print (buf5);
+  delay (500);
+
+  noteA = touchRead(12);
+  sprintf (buf6, "Note A: %3d \r \n", noteA);
+  Serial.print (buf6);
+  delay (500);
+
+  noteB = touchRead(14);
+  sprintf (buf7, "Note B: %3d \r \n", noteB);
+  Serial.print (buf7);
+  delay (500);
 }
