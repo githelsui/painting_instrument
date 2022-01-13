@@ -1,0 +1,14 @@
+{
+  "name": "painting-instrument",
+  "version": "1.0.0",
+  "description": "plays music based on where painting is touched lol",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "githel",
+  "license": "ISC",
+  "dependencies": {
+    "serialport": "^9.0.1"
+  }
+}
