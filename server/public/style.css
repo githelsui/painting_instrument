@@ -16,11 +16,19 @@ h1, h2, h3 {
     color: white;
 }
 
+#wrapper {
+    cursor: pointer;
+}
+
 #button {
     padding: 20px 60px 20px 60px;
     font-size: 17px;
     background-color: white;
     border-radius: 10px;
     border-width: 0px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Space Mono', monospace
+}
+
+#button:hover{
+    background-color: yellow;
 }

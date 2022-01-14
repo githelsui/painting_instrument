@@ -3,8 +3,9 @@ const synth = new Tone.PolySynth().connect(vol).toMaster();
 
 document.querySelector('button').addEventListener('click', async () => {
     await Tone.start();
-    // your page is ready to play sounds
     console.log("STAART");
+    document.getElementById('button').style.backgroundColor = "#696766";
+    document.getElementById('button').innerHTML = "Instrument Is On";
     readBoard();
 })
 
@@ -12,7 +13,7 @@ function readBoard(){
     var socket = io(); 
     socket.on('data', function(data){
         let note = data.substring(6, 7);
-        console.log("test " + note);
+        console.log("note: " + note);
         playNote(note);
         document.getElementById('note').innerHTML = data;
     }); 
@@ -28,29 +29,5 @@ function playSynth(note) {
     console.log('NOTE IS PLAYED');
     var pitch = note + "4";
     console.log(pitch);
-    synth.triggerAttackRelease("C4", "4n");
+    synth.triggerAttackRelease(String(pitch), "4n");
 }
-
-// function startTone(){
-//     console.log('audio is ready')
-//     if (Tone.context.state !== 'running') {
-//         Tone.context.resume();
-//         console.log("resumes");
-//     } else {
-//         console.log("starts");
-//         Tone.start();
-//     }
-// }
-
-// document.querySelector('Starts Tone')?.addEventListener('Starts Tone', async () => {
-//     // Tone.context.resume()
-// 	// await Tone.start()
-//     console.log('audio is ready')
-//     if (Tone.context.state !== 'running') {
-//         Tone.context.resume();
-//         console.log("resumes");
-//     } else {
-//         console.log("starts");
-//         await Tone.start();
-//     }
-// })
