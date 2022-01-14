@@ -14,8 +14,8 @@ function readBoard(){
     socket.on('data', function(data){
         let note = data.substring(6, 7);
         console.log("note: " + note);
-        playNote(note);
-        document.getElementById('note').innerHTML = data;
+        playSynth(note);
+        document.getElementById('note').innerHTML = note;
     }); 
 }
 
@@ -29,5 +29,5 @@ function playSynth(note) {
     console.log('NOTE IS PLAYED');
     var pitch = note + "4";
     console.log(pitch);
-    synth.triggerAttackRelease(String(pitch), "4n");
+    synth.triggerAttackRelease(String(pitch), "50n");
 }
