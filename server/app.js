@@ -20,21 +20,23 @@ var port = new SerialPort('/dev/cu.SLAB_USBtoUART', {
 
 port.pipe(parser);
 
-parser.on('data', function(data){
-    console.log(data);
-    // io.emit('data', data);
-});
-
 var app = http.createServer(function(req, res) {
     res.writeHead(200, {'Content-Type':'text/html'});
     res.end(index);
 });
 
-// var io = require('socket.io').applylist(app);
+var io = require('socket.io').listen(app);
 
-// io.on('connection', function(data){
-//     console.log('Node.js is listening');
+//when connection between port + server happens
+io.on('connection', function(data){
+    console.log('Node.js is listening');
+});
 
-// });
+//when we receive data from port
+parser.on('data', function(data){
+    console.log(data);
+    io.emit('data', data); //send data from port to server
+});
+
 
 app.listen(3000);

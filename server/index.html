@@ -8,10 +8,10 @@
         <h1>this painting makes music</h1>
         <div id="sample"></div>
         <script>
-            var socket = to();
+            var socket = io();
             socket.on('data', function(data){
                 console.log(data);
-                document.getElementById('sample').html(data);
+                document.getElementById('sample').innerHTML = data;
             }); 
         </script>
     </body>
