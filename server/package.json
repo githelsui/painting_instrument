@@ -9,6 +9,7 @@
   "author": "githel",
   "license": "ISC",
   "dependencies": {
-    "serialport": "^9.0.1"
+    "serialport": "^9.0.1",
+    "socket.io":  "^2.0.4"
   }
 }

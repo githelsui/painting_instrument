@@ -1,3 +1,8 @@
+var http = require('http');
+var fs = require('fs');
+
+var index = fs.readFileSync('index.html');
+
 var SerialPort = require("serialport");
 
 const parsers = SerialPort.parsers;
@@ -17,4 +22,19 @@ port.pipe(parser);
 
 parser.on('data', function(data){
     console.log(data);
+    // io.emit('data', data);
 });
+
+var app = http.createServer(function(req, res) {
+    res.writeHead(200, {'Content-Type':'text/html'});
+    res.end(index);
+});
+
+// var io = require('socket.io').applylist(app);
+
+// io.on('connection', function(data){
+//     console.log('Node.js is listening');
+
+// });
+
+app.listen(3000);

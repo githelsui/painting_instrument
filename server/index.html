@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Painting that plays music...</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    </head>
+    <body>
+        <h1>this painting makes music</h1>
+        <div id="sample"></div>
+        <script>
+            var socket = to();
+            socket.on('data', function(data){
+                console.log(data);
+                document.getElementById('sample').html(data);
+            }); 
+        </script>
+    </body>
+</html>
