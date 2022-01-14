@@ -1,7 +1,8 @@
 var http = require('http');
+var express = require('express');
 var fs = require('fs');
 
-var index = fs.readFileSync('index.html');
+var index = fs.readFileSync("index.html");
 
 var SerialPort = require("serialport");
 
@@ -24,6 +25,10 @@ var app = http.createServer(function(req, res) {
     res.writeHead(200, {'Content-Type':'text/html'});
     res.end(index);
 });
+
+
+// express_app.use(express.static("synthesizer.js"));
+
 
 var io = require('socket.io').listen(app);
 
