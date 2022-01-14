@@ -1,9 +1,7 @@
+var path = require('path');
 var http = require('http');
 var express = require('express');
 var fs = require('fs');
-
-var index = fs.readFileSync("index.html");
-
 var SerialPort = require("serialport");
 
 const parsers = SerialPort.parsers;
@@ -21,13 +19,9 @@ var port = new SerialPort('/dev/cu.SLAB_USBtoUART', {
 
 port.pipe(parser);
 
-var app = http.createServer(function(req, res) {
-    res.writeHead(200, {'Content-Type':'text/html'});
-    res.end(index);
-});
-
-
-// express_app.use(express.static("synthesizer.js"));
+var express_app = express();
+var app = http.createServer(express_app);
+express_app.use(express.static(path.join(__dirname, 'public')));
 
 
 var io = require('socket.io').listen(app);
