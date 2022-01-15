@@ -15,48 +15,48 @@ void setup()
 void loop()
 { 
   noteC = touchRead(04);
-  sprintf (buf1, " Note C: %3d \r \n", noteC);
+  sprintf (buf1, " Note C4: %3d \r \n", noteC);
   if(noteC < threshold) {
     Serial.print (buf1);
   }
 
   noteD = touchRead(27);
-  sprintf (buf2, " Note D: %3d \r \n", noteD);
+  sprintf (buf2, " Note D4: %3d \r \n", noteD);
   if(noteD < threshold) {
     Serial.print (buf2);
   }
 
   noteE = touchRead(33);
-  sprintf (buf3, " Note E: %3d \r \n", noteE);
+  sprintf (buf3, " Note E4: %3d \r \n", noteE);
   if(noteE < threshold) {
     Serial.print (buf3);
   }
 
   noteF = touchRead(15);
-  sprintf (buf4, " Note F: %3d \r \n", noteF);
+  sprintf (buf4, " Note F4: %3d \r \n", noteF);
   if(noteF < threshold) {
     Serial.print (buf4);
   }
 
   noteG = touchRead(13);
-  sprintf (buf5, " Note G: %3d \r \n", noteG);
+  sprintf (buf5, " Note G4: %3d \r \n", noteG);
   if(noteG < threshold) {
     Serial.print (buf5);
   }
 
   noteA = touchRead(12);
-  sprintf (buf6, " Note A: %3d \r \n", noteA);
+  sprintf (buf6, " Note A4: %3d \r \n", noteA);
   if(noteA < threshold) {
     Serial.print (buf6);
   }
 
   noteB = touchRead(14);
-  sprintf (buf7, " Note B: %3d \r \n", noteB);
+  sprintf (buf7, " Note B4: %3d \r \n", noteB);
   if(noteB < threshold) {
     Serial.print (buf7);
   }
   noteC1 = touchRead(32);
-  sprintf (buf8, " Note C1: %3d \r \n", noteC1);
+  sprintf (buf8, " Note C5: %3d \r \n", noteC1);
   if(noteC1 < threshold) {
     Serial.print (buf8);
   }
